@@ -25,14 +25,18 @@ SECRET_KEY = 'django-insecure-96hh6pvio5qr_m3v_yus0i5&v)+_ysx46id33bie998f$_0jmv
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 #Media files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / "media"
 
-# Application definition
+# Add your React app's origin
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",  
+]
 
+# Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -42,9 +46,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'base_app',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
