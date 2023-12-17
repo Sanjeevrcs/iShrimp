@@ -1,13 +1,9 @@
-// import React from 'react'
-
+import LoginForm from "@/components/LoginForm";
 
 export default function Login() {
   return (
-    <div>
-        <h1>Welcome to Login route </h1>
-
-    </div>
-
-
-  )
+    <>
+      <LoginForm />
+    </>
+  );
 }
