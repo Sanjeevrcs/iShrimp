@@ -14,7 +14,7 @@ export default function TripCard({ data }) {
     <Link to={`/trips/${id}`} className='w-[300px]'>
       <Card className='w-[320px]'>
         <img
-          src={banner}
+          src={`http://127.0.0.1:8000/${banner}`}
           alt='trip'
           className='w-full h-48 object-cover rounded-t-md aspect-[3/4]'
         />
