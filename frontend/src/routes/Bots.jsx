@@ -1,6 +1,20 @@
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import { useEffect, useState } from "react";
+import axiosInstance from "@/configs.jsx/axios";
 export default function Bots() {
+  const [botData, setBotData] = useState([]);
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await axiosInstance.get(`/bot/`);
+        console.log("data", res.data[0]);
+        setBotData(res.data[0]);
+      } catch (e) {
+        console.log(e);
+      }
+    })();
+  }, []);
   return (
     <div>
       <h1 className="scroll-m-20 text-4xl font-bold tracking-tight py-5">
@@ -60,6 +74,23 @@ export default function Bots() {
             </TableBody>
           </Table>
         </Card>
+        <Card className="w-full">
+          <CardHeader>
+            <h2 className="text-xl font-bold">Battery</h2>
+          </CardHeader>
+          <Table>
+            <TableBody>
+              <TableRow>
+                <TableCell className="font-medium">
+                Battery capacity {botData.battery_capacity}
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Bot dimensions {botData.bot_dimensions}</TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+        </Card>
       </div>
       <Card className="w-[700px]">
         <CardHeader>
@@ -114,8 +145,11 @@ export default function Bots() {
               </TableRow>
             </TableBody>
           </Table>
+          
         </CardContent>
+        
       </Card>
+      
     </div>
   );
 }

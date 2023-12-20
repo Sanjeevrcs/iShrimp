@@ -22,3 +22,4 @@ class TripInformation(models.Model):
         if self.start_date_time and self.end_date_time:
             self.duration = self.end_date_time - self.start_date_time
         super(TripInformation, self).save(*args, **kwargs)
+    

@@ -12,10 +12,24 @@ import {
 } from '@/components/ui/dialog';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
-
+import { useEffect,useState } from 'react';
 import TripCard from '@/components/TripCard';
+import axiosInstance from '@/configs.jsx/axios';
 
 export default function Trips() {
+
+  const [tripsData,setTripsData] = useState([]);
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await axiosInstance.get(`/trip/`);
+        console.log("data",res.data);
+        setTripsData(res.data);
+      } catch (e) {
+        console.log(e);
+      }
+    })();
+  }, []);
   return (
     <div>
       <div className='flex justify-center items-center h-full'>
@@ -61,69 +75,10 @@ export default function Trips() {
         </Dialog>
       </div>
       <div className='flex py-10 gap-10 flex-wrap'>
-        {trips.map((data) => (
-          <TripCard key={data.id} data={data} />
+        {tripsData.map((data,index) => (
+          <TripCard key={index} data={data} />
         ))}
       </div>
     </div>
   );
 }
-
-const trips = [
-  {
-    id: '1',
-    name: 'Trip to the moon',
-    banner: 'https://picsum.photos/200/300',
-    startDate: '2021-10-10',
-    duration: '2 days',
-  },
-  {
-    id: '2',
-    name: 'Trip to the moon',
-    banner: 'https://picsum.photos/200/300',
-    startDate: '2021-10-10',
-    duration: '2 days',
-  },
-  {
-    id: '3',
-    name: 'Trip to the moon',
-    banner: 'https://picsum.photos/200/300',
-    startDate: '2021-10-10',
-    duration: '2 days',
-  },
-  {
-    id: '4',
-    name: 'Trip to the moon',
-    banner: 'https://picsum.photos/200/300',
-    startDate: '2021-10-10',
-    duration: '2 days',
-  },
-  {
-    id: '1',
-    name: 'Trip to the moon',
-    banner: 'https://picsum.photos/200/300',
-    startDate: '2021-10-10',
-    duration: '2 days',
-  },
-  {
-    id: '2',
-    name: 'Trip to the moon',
-    banner: 'https://picsum.photos/200/300',
-    startDate: '2021-10-10',
-    duration: '2 days',
-  },
-  {
-    id: '3',
-    name: 'Trip to the moon',
-    banner: 'https://picsum.photos/200/300',
-    startDate: '2021-10-10',
-    duration: '2 days',
-  },
-  {
-    id: '4',
-    name: 'Trip to the moon',
-    banner: 'https://picsum.photos/200/300',
-    startDate: '2021-10-10',
-    duration: '2 days',
-  },
-];
