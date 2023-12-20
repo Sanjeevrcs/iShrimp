@@ -11,8 +11,8 @@ class BotInformation(models.Model):
 class TripInformation(models.Model):
     name = models.CharField(max_length=255)
     banner = models.ImageField(upload_to=f'trip_banners/')
-    start_date_time = models.DateTimeField()
-    end_date_time = models.DateTimeField()
+    start_date_time = models.DateField()
+    end_date_time = models.DateField()
     duration = models.DurationField()
 
     def __str__(self):
