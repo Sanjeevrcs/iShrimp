@@ -35,8 +35,10 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",  
+    "http://localhost:5173", 
+    "https://ishrimp.iqubekct.ac.in"
 ]
+CSRF_TRUSTED_ORIGINS = ['https://ishrimpapi.iqubekct.ac.in']
 
 # Application definition
 INSTALLED_APPS = [
