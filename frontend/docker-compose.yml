@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  node_app:
+    container_name: iShrimp_node
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '4713:4173'  # Adjust the port as needed
+    command: pnpm run preview
+
+volumes:
+  media_data:
