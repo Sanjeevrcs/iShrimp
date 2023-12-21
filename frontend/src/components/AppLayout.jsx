@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 export default function AppLayout({ children }) {
   return (
-    <div className='min-h-screen bg-background font-sans antialiased __variable_a64ecd text-foreground'>
+    <div className='bg-background font-sans antialiased __variable_a64ecd text-foreground'>
       <nav
         className={cn(
           'flex items-center space-x-4 lg:space-x-6 justify-between py-3 px-5 border-b'
@@ -39,7 +39,7 @@ export default function AppLayout({ children }) {
           <UserIcon />
         </div>
       </nav>
-      <main className='py-5 px-10'>{children}</main>
+      <main className='py-5 px-10 bg-background min-h-100'>{children}</main>
     </div>
   );
 }

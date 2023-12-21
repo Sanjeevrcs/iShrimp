@@ -1,52 +1,50 @@
-
-
-export const chartData = [
+export const tripData1 = [
   {
-    name: "Jan",
-    total: Math.floor(Math.random() * 5000) + 1000,
+    name: 'Excessive Vegetation / Biofouling',
+    value: 100,
+    threshold: 50,
+    maximum: 100,
   },
   {
-    name: "Feb",
-    total: Math.floor(Math.random() * 5000) + 1000,
+    name: 'pH',
+    value: 6.5,
+    threshold: 7,
+    maximum: 14,
   },
   {
-    name: "Mar",
-    total: Math.floor(Math.random() * 5000) + 1000,
+    name: 'Pressure',
+    value: 17,
+    threshold: 5,
+    maximum: 30,
   },
   {
-    name: "Apr",
-    total: Math.floor(Math.random() * 5000) + 1000,
+    name: 'Salinity',
+    value: 746,
+    threshold: 600,
+    maximum: 1200,
   },
   {
-    name: "May",
-    total: Math.floor(Math.random() * 5000) + 1000,
+    name: 'Total Dissolved Solute',
+    value: 225,
+    threshold: 225,
+    maximum: 500,
   },
   {
-    name: "Jun",
-    total: Math.floor(Math.random() * 5000) + 1000,
+    name: 'Turbidity',
+    value: 12,
+    threshold: 10,
+    maximum: 50,
   },
   {
-    name: "Jul",
-    total: Math.floor(Math.random() * 5000) + 1000,
+    name: 'Temperature',
+    value: 15,
+    threshold: 15,
+    maximum: 30,
   },
   {
-    name: "Aug",
-    total: Math.floor(Math.random() * 5000) + 1000,
+    name: 'Sedimentation on water bed',
+    value: 10,
+    threshold: 50,
+    maximum: 100,
   },
-  {
-    name: "Sep",
-    total: Math.floor(Math.random() * 5000) + 1000,
-  },
-  {
-    name: "Oct",
-    total: Math.floor(Math.random() * 5000) + 1000,
-  },
-  {
-    name: "Nov",
-    total: Math.floor(Math.random() * 5000) + 1000,
-  },
-  {
-    name: "Dec",
-    total: Math.floor(Math.random() * 5000) + 1000,
-  },
-]
+];

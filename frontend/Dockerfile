@@ -17,7 +17,7 @@ RUN pnpm install
 
 # Copy the rest of the application code to the working directory
 
-RUN pnpm run build
+RUN pnpm run build --mode production
 # Build the React app
 
 

@@ -1,57 +1,218 @@
-import { DashboardCharts } from '@/components/DashboardCharts';
-import { Card } from '@/components/ui/card';
 import axiosInstance from '@/configs.jsx/axios';
-import { chartData } from '@/data/DashboardChartData';
-import { useState } from 'react';
-import { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 
+import { useParams } from 'react-router-dom';
+import { FaRegDotCircle } from 'react-icons/fa';
+import damPhoto from './../assets/dam.jpg';
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from '@/components/ui/hover-card';
+import { TripRadarChart } from '@/components/TripRadarChart';
+import { tripData1 } from '@/data/DashboardChartData';
+import { Card } from '@/components/ui/card';
+import { Table, TableBody, TableCell, TableRow } from '@/components/ui/table';
 export default function TripDetail() {
   const { id } = useParams();
-  const [data, setData] = useState({});
-
-  const { name, start_date_time, end_date_time, banner, duration } = data;
-
-  useEffect(() => {
-    (async () => {
-      try {
-        const res = await axiosInstance.get(`/trip/${id}/?format=json`);
-        console.log(res.data);
-        setData(res.data);
-      } catch (e) {
-        console.log(e);
-      }
-    })();
-  }, []);
 
   return (
-    <div className='flex flex-col gap-5'>
-      <img
-        src={banner}
-        alt={name}
-        className='w-full h-48 object-cover rounded-md aspect-[3/4]'
-      />
-      <h1 className='scroll-m-20 text-4xl font-bold py-5'>{name}</h1>
-
-      <Card className='w-full p-5'>
-        <p>{start_date_time}</p>
-        <p>{end_date_time}</p>
-        <p>{duration}</p>
-      </Card>
-
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-        <div className='flex-grow'>
-          <div className='bg-card p-4 rounded-lg shadow-md h-full'>
-            <DashboardCharts data={chartData} />
-          </div>
-        </div>
-        <div className='flex-grow'>
-          <video
-            src=''
-            className='w-full h-full rounded-lg shadow-md'
-            controls
+    <div className='flex gap-10 flex-col'>
+      <div className='flex flex-col gap-5 items-center w-full'>
+        <div className='relative w-3/4'>
+          <img
+            src={damPhoto}
+            alt='dam'
+            className='w-full h-full object-cover rounded-md '
           />
+          <HoverCard>
+            <HoverCardTrigger
+              style={{ position: 'absolute', bottom: '280px', left: '10px' }}>
+              <FaRegDotCircle color='yellow' />
+            </HoverCardTrigger>
+            <HoverCardContent>
+              <Card className='w-full'>
+                <Table>
+                  <TableBody>
+                    <TableRow>
+                      <TableCell className='font-medium'>
+                        Penstack Misalignment
+                      </TableCell>
+                      <TableCell>
+                        {Math.floor(Math.random() * 91 + 10)}%
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className='font-medium'>
+                        Missing Balls
+                      </TableCell>
+                      <TableCell>
+                        {Math.floor(Math.random() * 91 + 10)}%
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className='font-medium'>
+                        Turbine Imbalance
+                      </TableCell>
+                      <TableCell>
+                        {Math.floor(Math.random() * 91 + 10)}%
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className='font-medium'>
+                        Trash Gate Damage
+                      </TableCell>
+                      <TableCell>
+                        {Math.floor(Math.random() * 91 + 10)}%
+                      </TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </Card>
+            </HoverCardContent>
+          </HoverCard>
+          <HoverCard>
+            <HoverCardTrigger
+              style={{ position: 'absolute', top: '200px', left: '60px' }}>
+              <FaRegDotCircle color='black' />
+            </HoverCardTrigger>
+            <HoverCardContent>
+              <Card className='w-full'>
+                <Table>
+                  <TableBody>
+                    <TableRow>
+                      <TableCell className='font-medium'>Corrosion</TableCell>
+                      <TableCell>
+                        {Math.floor(Math.random() * 91 + 10)}%
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className='font-medium'>
+                        Excessive Vegitation
+                      </TableCell>
+                      <TableCell>
+                        {Math.floor(Math.random() * 91 + 10)}%
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className='font-medium'>Abrasion</TableCell>
+                      <TableCell>
+                        {Math.floor(Math.random() * 91 + 10)}%
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className='font-medium'>Cracks</TableCell>
+                      <TableCell>
+                        {Math.floor(Math.random() * 91 + 10)}%
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className='font-medium'>
+                        Sedimentation
+                      </TableCell>
+                      <TableCell>
+                        {Math.floor(Math.random() * 91 + 10)}%
+                      </TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </Card>
+            </HoverCardContent>
+          </HoverCard>
+          <HoverCard>
+            <HoverCardTrigger
+              style={{ position: 'absolute', top: '330px', left: '400px' }}>
+              <FaRegDotCircle color='black' />
+            </HoverCardTrigger>
+            <HoverCardContent>
+              <Card className='w-full'>
+                <Table>
+                  <TableBody>
+                    <TableRow>
+                      <TableCell className='font-medium'>
+                        Penstack Misalignment
+                      </TableCell>
+                      <TableCell>
+                        {Math.floor(Math.random() * 91 + 10)}%
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className='font-medium'>
+                        Missing Balls
+                      </TableCell>
+                      <TableCell>
+                        {Math.floor(Math.random() * 91 + 10)}%
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className='font-medium'>
+                        Turbine Imbalance
+                      </TableCell>
+                      <TableCell>
+                        {Math.floor(Math.random() * 91 + 10)}%
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className='font-medium'>
+                        Trash Gate Damage
+                      </TableCell>
+                      <TableCell>
+                        {Math.floor(Math.random() * 91 + 10)}%
+                      </TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </Card>
+            </HoverCardContent>
+          </HoverCard>
+          <HoverCard>
+            <HoverCardTrigger
+              style={{ position: 'absolute', top: '530px', left: '710px' }}>
+              <FaRegDotCircle color='black' />
+            </HoverCardTrigger>
+            <HoverCardContent>
+              {' '}
+              <Table>
+                <TableBody>
+                  <TableRow>
+                    <TableCell className='font-medium'>Corrosion</TableCell>
+                    <TableCell>
+                      {Math.floor(Math.random() * 91 + 10)}%
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className='font-medium'>
+                      Excessive Vegitation
+                    </TableCell>
+                    <TableCell>
+                      {Math.floor(Math.random() * 91 + 10)}%
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className='font-medium'>Abrasion</TableCell>
+                    <TableCell>
+                      {Math.floor(Math.random() * 91 + 10)}%
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className='font-medium'>Cracks</TableCell>
+                    <TableCell>
+                      {Math.floor(Math.random() * 91 + 10)}%
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className='font-medium'>Sedimentation</TableCell>
+                    <TableCell>
+                      {Math.floor(Math.random() * 91 + 10)}%
+                    </TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </HoverCardContent>
+          </HoverCard>
         </div>
+      </div>
+      <div className='h-[500px] w-1/2 '>
+        <TripRadarChart data={tripData1} />
       </div>
     </div>
   );
