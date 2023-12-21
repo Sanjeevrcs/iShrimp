@@ -74,3 +74,7 @@ class PlantsImage(models.Model):
         return f"Plants Image {self.id}"
 
 
+class video(models.Model):
+    video = models.FileField(upload_to='videos/')
+    def __str__(self):
+        return f"Video {self.id}"
