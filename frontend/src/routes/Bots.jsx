@@ -4,24 +4,26 @@ import { Card, CardHeader, CardContent } from '@/components/ui/card';
 export default function Bots() {
   return (
     <div>
-      <h1 className='scroll-m-20 text-4xl font-bold tracking-tight py-5'>
+      <h1 className='scroll-m-20 text-4xl font-bold tracking-tight py-5 '>
         Bot Information
       </h1>
       <div className='flex gap-10 pb-12'>
         <Card className='w-full '>
           <CardHeader>
-            <h2 className='text-xl font-bold'>Bot Material</h2>
+            <h2 className='text-xl font-bold text-primary text-primary text-primary'>
+              Bot Material
+            </h2>
           </CardHeader>
           <Table>
             <TableBody>
               <TableRow>
-                <TableCell className='font-medium'>Main body</TableCell>
+                <TableCell className='font-bold'>Main body</TableCell>
                 <TableCell>
                   Kevlar 49 ( <b>Aramid Fiber</b> - Type of Synthetic Polymer )
                 </TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className='font-medium'>Hull</TableCell>
+                <TableCell className='font-bold'>Hull</TableCell>
                 <TableCell>HDPE PN20</TableCell>
               </TableRow>
             </TableBody>
@@ -29,16 +31,18 @@ export default function Bots() {
         </Card>
         <Card className='w-full'>
           <CardHeader>
-            <h2 className='text-xl font-bold'>Propulsion</h2>
+            <h2 className='text-xl font-bold text-primary text-primary'>
+              Propulsion
+            </h2>
           </CardHeader>
           <Table>
             <TableBody>
               <TableRow>
-                <TableCell className='font-medium'>Thruster</TableCell>
+                <TableCell className='font-bold'>Thruster</TableCell>
                 <TableCell>T200 Thruster</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className='font-medium'>Configuration</TableCell>
+                <TableCell className='font-bold'>Configuration</TableCell>
                 <TableCell>Tricopter Configuration</TableCell>
               </TableRow>
             </TableBody>
@@ -46,35 +50,37 @@ export default function Bots() {
         </Card>
         <Card className='w-full'>
           <CardHeader>
-            <h2 className='text-xl font-bold'>Robotic Arm</h2>
+            <h2 className='text-xl font-bold text-primary text-primary'>
+              Robotic Arm
+            </h2>
           </CardHeader>
           <Table>
             <TableBody>
               <TableRow>
-                <TableCell className='font-medium'>
-                  6 degree of freedom
-                </TableCell>
+                <TableCell className='font-bold'>6 degree of freedom</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className='font-medium'>4-finger Claw</TableCell>
+                <TableCell className='font-bold'>4-finger Claw</TableCell>
               </TableRow>
             </TableBody>
           </Table>
         </Card>
         <Card className='w-full'>
           <CardHeader>
-            <h2 className='text-xl font-bold'>Control Surfaces</h2>
+            <h2 className='text-xl font-bold text-primary text-primary'>
+              Control Surfaces
+            </h2>
           </CardHeader>
           <Table>
             <TableBody>
               <TableRow>
-                <TableCell className='font-medium'>Ruddevator</TableCell>
+                <TableCell className='font-bold'>Ruddevator</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className='font-medium'>Canard</TableCell>
+                <TableCell className='font-bold'>Canard</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className='font-medium'>Winglets</TableCell>
+                <TableCell className='font-bold'>Winglets</TableCell>
               </TableRow>
             </TableBody>
           </Table>
@@ -83,28 +89,30 @@ export default function Bots() {
       <div className='flex gap-10 pb-12'>
         <Card className='w-full '>
           <CardHeader>
-            <h2 className='text-xl font-bold'>Dimensions</h2>
+            <h2 className='text-xl font-bold text-primary text-primary'>
+              Dimensions
+            </h2>
           </CardHeader>
           <Table>
             <TableBody>
               <TableRow>
-                <TableCell className='font-medium'>Weight</TableCell>
+                <TableCell className='font-bold'>Weight</TableCell>
                 <TableCell>8 Kg</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className='font-medium'>Length</TableCell>
+                <TableCell className='font-bold'>Length</TableCell>
                 <TableCell>600 mm</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className='font-medium'>Width</TableCell>
+                <TableCell className='font-bold'>Width</TableCell>
                 <TableCell>200 mm</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className='font-medium'>Height</TableCell>
+                <TableCell className='font-bold'>Height</TableCell>
                 <TableCell>150 mm</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className='font-medium'>Payload</TableCell>
+                <TableCell className='font-bold'>Payload</TableCell>
                 <TableCell>5 Kg</TableCell>
               </TableRow>
             </TableBody>
@@ -112,34 +120,36 @@ export default function Bots() {
         </Card>
         <Card className='w-full'>
           <CardHeader>
-            <h2 className='text-xl font-bold'>Bot Condition</h2>
+            <h2 className='text-xl font-bold text-primary text-primary'>
+              Bot Condition
+            </h2>
           </CardHeader>
           <Table>
             <TableBody>
               <TableRow>
-                <TableCell className='font-medium'>Temperature</TableCell>
+                <TableCell className='font-bold'>Temperature</TableCell>
                 <TableCell>-30°C to +40°C</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className='font-medium'>
+                <TableCell className='font-bold'>
                   Internal Pressure (Max)
                 </TableCell>
                 <TableCell>1 bar</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className='font-medium'>Outer Pressure</TableCell>
+                <TableCell className='font-bold'>Outer Pressure</TableCell>
                 <TableCell>3 bar</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className='font-medium'>Battery</TableCell>
+                <TableCell className='font-bold'>Battery</TableCell>
                 <TableCell>24 V</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className='font-medium'>Max Power used</TableCell>
+                <TableCell className='font-bold'>Max Power used</TableCell>
                 <TableCell>-</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className='font-medium'>Max Power used</TableCell>
+                <TableCell className='font-bold'>Max Power used</TableCell>
                 <TableCell>5 m/s</TableCell>
               </TableRow>
               <TableRow>
@@ -150,18 +160,18 @@ export default function Bots() {
         </Card>
         <Card className='w-full'>
           <CardHeader>
-            <h2 className='text-xl font-bold'>
+            <h2 className='text-xl font-bold text-primary text-primary'>
               Thrust at 0 Knots (Bollard Pull)
             </h2>
           </CardHeader>
           <Table>
             <TableBody>
               <TableRow>
-                <TableCell className='font-medium'>Forward</TableCell>
+                <TableCell className='font-bold'>Forward</TableCell>
                 <TableCell>150 lbf (68 kgf)</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className='font-medium'>Reverse</TableCell>
+                <TableCell className='font-bold'>Reverse</TableCell>
                 <TableCell>125 lbf (56 kgf)</TableCell>
               </TableRow>
               <TableRow>
@@ -173,7 +183,9 @@ export default function Bots() {
         </Card>
         <Card className='w-full'>
           <CardHeader>
-            <h2 className='text-xl font-bold'>Heading missing</h2>
+            <h2 className='text-xl font-bold text-primary text-primary'>
+              Heading missing
+            </h2>
           </CardHeader>
           <Table>
             <TableBody>
@@ -216,7 +228,9 @@ export default function Bots() {
       <div className='flex gap-10'>
         <Card className='w-[690px]'>
           <CardHeader>
-            <h2 className='text-xl font-bold'>Sensors</h2>
+            <h2 className='text-xl font-bold text-primary text-primary'>
+              Sensors
+            </h2>
           </CardHeader>
           <CardContent className='flex '>
             <Table>
@@ -280,7 +294,7 @@ export default function Bots() {
         </Card>
         <Card className='w-[690px]'>
           <CardHeader>
-            <h2 className='text-xl font-bold'>
+            <h2 className='text-xl font-bold text-primary'>
               Vehicle equipment fit as standard
             </h2>
           </CardHeader>

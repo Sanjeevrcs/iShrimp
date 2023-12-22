@@ -53,7 +53,7 @@ class trip_information_search(generics.ListCreateAPIView):
     queryset = TripInformation.objects.all()
     serializer_class = TripInformationListSerializer
     filter_backends = [DjangoFilterBackend, filters.SearchFilter]
-    search_fields = ['name', 'duration', 'start_date_time', 'end_date_time']
+    search_fields = ['name', 'duration', 'start_date_time', 'end_date_time','id']
 
 @api_view(['GET'])
 def trip_information_detail(request, pk):

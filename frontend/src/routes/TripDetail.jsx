@@ -41,7 +41,7 @@ export default function TripDetail() {
       {trip && (
         <Card className='w-full p-5'>
           <CardContent>
-            <h1 className='scroll-m-20 text-4xl font-bold tracking-tight py-5 capitalize'>
+            <h1 className='scroll-m-20 text-4xl font-bold tracking-tight py-5 capitalize text-primary'>
               {trip.name}
             </h1>
             <br />
@@ -74,7 +74,7 @@ export default function TripDetail() {
           <HoverCard>
             <HoverCardTrigger
               style={{ position: 'absolute', bottom: '280px', left: '10px' }}>
-              <FaRegDotCircle color='yellow' />
+              <FaRegDotCircle size='24px' color='red' />
             </HoverCardTrigger>
             <HoverCardContent>
               <Card className='w-full'>
@@ -120,7 +120,7 @@ export default function TripDetail() {
           <HoverCard>
             <HoverCardTrigger
               style={{ position: 'absolute', top: '200px', left: '60px' }}>
-              <FaRegDotCircle color='black' />
+              <FaRegDotCircle size='24px' color='red' />
             </HoverCardTrigger>
             <HoverCardContent>
               <Card className='w-full'>
@@ -168,7 +168,7 @@ export default function TripDetail() {
           <HoverCard>
             <HoverCardTrigger
               style={{ position: 'absolute', top: '330px', left: '400px' }}>
-              <FaRegDotCircle color='black' />
+              <FaRegDotCircle size='24px' color='red' />
             </HoverCardTrigger>
             <HoverCardContent>
               <Card className='w-full'>
@@ -214,7 +214,7 @@ export default function TripDetail() {
           <HoverCard>
             <HoverCardTrigger
               style={{ position: 'absolute', top: '530px', left: '710px' }}>
-              <FaRegDotCircle color='black' />
+              <FaRegDotCircle size='24px' color='red' />
             </HoverCardTrigger>
             <HoverCardContent>
               {' '}

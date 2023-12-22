@@ -16,7 +16,7 @@ const TripBarChart = ({ data }) => {
           fontSize={12}
           tickLine={false}
           axisLine={false}
-          tickFormatter={(value) => `$${value}`}
+          tickFormatter={(value) => `${value}%`}
         />
         <Bar dataKey='sales' fill='#adfa1d' radius={[4, 4, 0, 0]} />
       </BarChart>

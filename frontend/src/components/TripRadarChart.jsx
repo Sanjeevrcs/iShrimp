@@ -31,18 +31,18 @@ export function TripRadarChart({ data }) {
               <PolarAngleAxis dataKey='name' />
               <PolarRadiusAxis domain={[0, 100]} />
               <Radar
-                name='value'
+                name='Value'
                 dataKey='valuePercentage'
-                stroke='#8884d8'
-                fill='#8884d8'
+                stroke='#adfa1d'
+                fill='#adfa1d'
                 fillOpacity={0.8}
               />
               <Radar
-                name='threshold'
+                name='Threshold'
                 dataKey='thresholdPercentage'
                 stroke='#ff7300'
                 fill='#ff7300'
-                fillOpacity={0.7}
+                fillOpacity={0.8}
               />
               <Legend />
             </RadarChart>

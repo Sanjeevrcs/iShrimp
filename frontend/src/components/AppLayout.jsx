@@ -13,7 +13,7 @@ export default function AppLayout({ children }) {
         <div className='flex items-center space-x-4 lg:space-x-6'>
           <Link
             to='/dashboard'
-            className='text-md font-medium transition-colors hover:text-primary'>
+            className='text-md font-medium transition-colors hover:text-primary text-primary'>
             Dashboard
           </Link>
 
