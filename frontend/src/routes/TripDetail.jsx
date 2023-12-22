@@ -20,8 +20,9 @@ export default function TripDetail() {
   const [trip, setTrip] = useState(null);
 
   useEffect(() => {
-    axiosInstance.get(`/trips/${id}`).then((res) => {
+    axiosInstance.get(`/trip/${id}`).then((res) => {
       setTrip(res.data);
+      console.log(res.data);
     });
   }, [id]);
 
@@ -42,22 +43,22 @@ export default function TripDetail() {
         <Card className='w-full p-5'>
           <CardContent>
             <h1 className='scroll-m-20 text-4xl font-bold tracking-tight py-5 capitalize text-primary'>
-              {trip.name}
+              {trip.trip.name}
             </h1>
             <br />
             <Table>
               <TableBody>
                 <TableRow>
                   <TableCell className='font-medium'>Start Date</TableCell>
-                  <TableCell>{trip.start_date_time}</TableCell>
+                  <TableCell>{trip.trip.start_date_time}</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className='font-medium'>End Date</TableCell>
-                  <TableCell>{trip.end_date_time}</TableCell>
+                  <TableCell>{trip.trip.end_date_time}</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className='font-medium'>Duration</TableCell>
-                  <TableCell>{trip.duration}</TableCell>
+                  <TableCell>{trip.trip.duration}</TableCell>
                 </TableRow>
               </TableBody>
             </Table>
