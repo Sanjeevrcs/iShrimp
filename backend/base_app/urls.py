@@ -13,7 +13,6 @@ from .views import (
 
 urlpatterns = [
     path('trips/', trip_information_list, name='trip-information-list'),
-    path('trips/<int:pk>/', trip_information_detail, name='trip-information-detail'),
     path('corrosion/<int:trip_id>/', corrosion_images, name='corrosion_image'),
     path('crack/<int:trip_id>/', crack_images, name='crack-images'),
     path('fish/<int:trip_id>/', fish_images, name='fish-images'),
