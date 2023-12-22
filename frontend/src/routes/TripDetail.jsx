@@ -10,13 +10,60 @@ import {
 } from '@/components/ui/hover-card';
 import { TripRadarChart } from '@/components/TripRadarChart';
 import { tripData1 } from '@/data/DashboardChartData';
-import { Card } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableRow } from '@/components/ui/table';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import TripBarChart from '@/components/TripBarChart';
 export default function TripDetail() {
   const { id } = useParams();
+  const [trip, setTrip] = useState(null);
+
+  useEffect(() => {
+    axiosInstance.get(`/trips/${id}`).then((res) => {
+      setTrip(res.data);
+    });
+  }, [id]);
+
+  const tripBarChartData = [
+    { name: 'Corrosion', sales: Math.floor(Math.random() * 91 + 10) },
+    {
+      name: 'Excessive Vegitation',
+      sales: Math.floor(Math.random() * 91 + 10),
+    },
+    { name: 'Abrasion', sales: Math.floor(Math.random() * 91 + 10) },
+    { name: 'Cracks', sales: Math.floor(Math.random() * 91 + 10) },
+    { name: 'Sedimentation', sales: Math.floor(Math.random() * 91 + 10) },
+  ];
 
   return (
     <div className='flex gap-10 flex-col'>
+      {trip && (
+        <Card className='w-full p-5'>
+          <CardContent>
+            <h1 className='scroll-m-20 text-4xl font-bold tracking-tight py-5 capitalize'>
+              {trip.name}
+            </h1>
+            <br />
+            <Table>
+              <TableBody>
+                <TableRow>
+                  <TableCell className='font-medium'>Start Date</TableCell>
+                  <TableCell>{trip.start_date_time}</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className='font-medium'>End Date</TableCell>
+                  <TableCell>{trip.end_date_time}</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className='font-medium'>Duration</TableCell>
+                  <TableCell>{trip.duration}</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </CardContent>
+        </Card>
+      )}
       <div className='flex flex-col gap-5 items-center w-full'>
         <div className='relative w-3/4'>
           <img
@@ -211,8 +258,13 @@ export default function TripDetail() {
           </HoverCard>
         </div>
       </div>
-      <div className='h-[500px] w-1/2 '>
-        <TripRadarChart data={tripData1} />
+      <div className='flex gap-10 items-center flex-end'>
+        <div className='h-[500px] w-1/2 '>
+          <TripRadarChart data={tripData1} />
+        </div>
+        <div className='h-[500px] w-1/2 bg-card p-4 shadow-md rounded-lg flex items-end'>
+          <TripBarChart data={tripBarChartData} />
+        </div>
       </div>
     </div>
   );

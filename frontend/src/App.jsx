@@ -2,6 +2,7 @@ import { routes } from './configs.jsx/routes';
 import { Routes, Route } from 'react-router-dom';
 import AppLayout from './components/AppLayout';
 import TripDetail from './routes/TripDetail';
+import { Navigate } from 'react-router-dom';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           </AppLayout>
         }
       />
+      <Route path='/' element={<Navigate to='/login' />} />
     </Routes>
   );
 }

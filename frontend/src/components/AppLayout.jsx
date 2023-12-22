@@ -1,6 +1,5 @@
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
-import { Input } from '@/components/ui/input';
 import { UserIcon } from '@/components/UserIcon';
 import PropTypes from 'prop-types';
 
@@ -13,7 +12,7 @@ export default function AppLayout({ children }) {
         )}>
         <div className='flex items-center space-x-4 lg:space-x-6'>
           <Link
-            to='/'
+            to='/dashboard'
             className='text-md font-medium transition-colors hover:text-primary'>
             Dashboard
           </Link>
@@ -30,11 +29,11 @@ export default function AppLayout({ children }) {
           </Link>
         </div>
         <div className='flex flex items-center space-x-4 lg:space-x-6'>
-          <Input
+          {/* <Input
             type='search'
             placeholder='Search...'
             className='md:w-[100px] lg:w-[300px]'
-          />
+          /> */}
 
           <UserIcon />
         </div>
