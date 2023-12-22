@@ -17,7 +17,7 @@ from .serializers import (
 )
 
 from rest_framework import filters
-
+from django.core import serializers
 from rest_framework import generics
 
 @api_view(['GET', 'POST'])
@@ -48,16 +48,39 @@ def trip_information_list(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-
+from django_filters.rest_framework import DjangoFilterBackend
 class trip_information_search(generics.ListCreateAPIView):
     queryset = TripInformation.objects.all()
-    serializer_class = TripInformationDetailSerializer
+    serializer_class = TripInformationListSerializer
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
+    search_fields = ['name', 'duration', 'start_date_time', 'end_date_time']
+
 @api_view(['GET'])
 def trip_information_detail(request, pk):
     try:
         trip = TripInformation.objects.get(pk=pk)
-        serializer = TripInformationDetailSerializer(trip)
-        return Response(serializer.data)
+        corrosion = Corrosion.objects.get(trip_id=pk)
+        crack = Crack.objects.get(trip_id=pk)
+        fish = Fish.objects.get(trip_id=pk)
+        pipe = Pipe.objects.get(trip_id=pk)
+        plants = Plants.objects.get(trip_id=pk)
+
+        context = {}
+        context['trip'] = {
+            'id': trip.id,
+            'name': trip.name,
+            'duration': trip.duration,
+            'banner': trip.banner.url,
+            'start_date_time': trip.start_date_time,
+            'end_date_time': trip.end_date_time
+        }
+        context['crack'] = [i.image.url for i in crack.images.all()]
+        context['corrosion'] = [i.image.url for i in corrosion.images.all()]
+        context['fish'] = [i.image.url for i in fish.images.all()]
+        context['pipe'] = [i.image.url for i in pipe.images.all()]
+        context['plants'] = [i.image.url for i in plants.images.all()]
+
+        return Response(context)
     except TripInformation.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
     

@@ -5,7 +5,7 @@ WORKDIR /usr/src/app
 
 COPY requirements.txt /usr/src/app/
 
-RUN rm db.sqlite3
+# RUN rm db.sqlite3
 
 RUN pip install --default-timeout=100 --no-cache-dir -r requirements.txt
 COPY . /usr/src/app/
