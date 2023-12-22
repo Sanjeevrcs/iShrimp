@@ -26,11 +26,9 @@ export default function Dashboard() {
       <br />
       <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
         <div className='flex-grow'>
-          <video
+          <img
             src='http://localhost:5000'
             className='w-full h-full rounded-lg shadow-lg'
-            controls
-            autoPlay
           />
         </div>
         <div className='flex-grow'>
