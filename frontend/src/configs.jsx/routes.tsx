@@ -9,7 +9,7 @@ import { Layout } from 'lucide-react';
 
 export const routes = [
   {
-    path: '/',
+    path: '/dashboard',
     component: <Dashboard />,
     isNavItem: true,
     label: 'Dashboard',

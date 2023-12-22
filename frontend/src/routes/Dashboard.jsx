@@ -1,5 +1,3 @@
-import dash from './../assets/dash.mp4';
-
 export default function Dashboard() {
   return (
     <div className='p-4'>
@@ -17,7 +15,7 @@ export default function Dashboard() {
         </div>
         <div className='flex-grow'>
           <video
-            src={dash}
+            src='https://ishrimpapi.iqubekct.ac.in/media/dash.mp4'
             className='w-full h-full rounded-lg shadow-md'
             controls
             autoPlay

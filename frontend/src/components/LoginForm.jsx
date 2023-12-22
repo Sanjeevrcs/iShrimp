@@ -14,7 +14,7 @@ export default function LoginForm() {
 
     setTimeout(() => {
       setIsLoading(false);
-      navigate('/');
+      navigate('/dashboard');
     }, 3000);
   }
 
