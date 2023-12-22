@@ -8,15 +8,35 @@ export default function Dashboard() {
       <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
         <div className='flex-grow'>
           <video
-            src=''
-            className='w-full h-full rounded-lg shadow-md'
+            src='https://ishrimpapi.iqubekct.ac.in/media/videoutt.mp4'
+            className='w-full h-full rounded-lg shadow-lg'
             controls
+            autoPlay
+          />
+        </div>
+        <div className='flex-grow'>
+          <video
+            src='https://ishrimpapi.iqubekct.ac.in/media/videout.mp4'
+            className='w-full h-full rounded-lg shadow-lg'
+            autoPlay
+            controls
+          />
+        </div>
+      </div>
+      <br />
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+        <div className='flex-grow'>
+          <video
+            src='http://localhost:8502'
+            className='w-full h-full rounded-lg shadow-lg'
+            controls
+            autoPlay
           />
         </div>
         <div className='flex-grow'>
           <video
             src='https://ishrimpapi.iqubekct.ac.in/media/dash.mp4'
-            className='w-full h-full rounded-lg shadow-md'
+            className='w-full h-full rounded-lg shadow-lg'
             controls
             autoPlay
           />

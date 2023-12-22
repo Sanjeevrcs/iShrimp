@@ -6,6 +6,7 @@ import path from 'path';
 import React from 'react';
 import { MdOutlineDashboard, MdTroubleshoot, MdPolicy } from 'react-icons/md';
 import { Layout } from 'lucide-react';
+import ChatBot from '@/routes/ChatBot';
 
 export const routes = [
   {
@@ -32,7 +33,6 @@ export const routes = [
     icons: <MdOutlineDashboard />,
     layout: true,
   },
-
   {
     path: '/login',
     component: <Login />,
@@ -40,5 +40,12 @@ export const routes = [
     label: 'Login',
     icons: <MdOutlineDashboard />,
     layout: false,
+  },
+  {
+    path: '/chatbot',
+    component: <ChatBot />,
+    isNavItem: false,
+    label: 'Chatbot',
+    layout: true,
   },
 ];

@@ -27,6 +27,11 @@ export default function AppLayout({ children }) {
             className='text-md font-medium text-muted-foreground transition-colors hover:text-primary'>
             Bot Information
           </Link>
+          <Link
+            to='/chatbot'
+            className='text-md font-medium text-muted-foreground transition-colors hover:text-primary'>
+            Chat Bot
+          </Link>
         </div>
         <div className='flex flex items-center space-x-4 lg:space-x-6'>
           {/* <Input
