@@ -295,7 +295,7 @@ export default function TripDetail() {
                     <CarouselItem key={index}>
                       <AspectRatio ratio={16 / 9}>
                         <img
-                          src={`http://localhost:8000${src}`}
+                          src={`https://ishrimpapi.iqubekct.ac.in${src}`}
                           className='rounded-md object-cover'
                         />
                       </AspectRatio>
@@ -322,7 +322,7 @@ export default function TripDetail() {
                     <CarouselItem key={index}>
                       <AspectRatio ratio={16 / 9}>
                         <img
-                          src={`http://localhost:8000${src}`}
+                          src={`https://ishrimpapi.iqubekct.ac.in${src}`}
                           className='rounded-md object-cover'
                         />
                       </AspectRatio>
@@ -351,7 +351,7 @@ export default function TripDetail() {
                     <CarouselItem key={index}>
                       <AspectRatio ratio={16 / 9}>
                         <img
-                          src={`http://localhost:8000${src}`}
+                          src={`https://ishrimpapi.iqubekct.ac.in${src}`}
                           className='rounded-md object-cover'
                         />
                       </AspectRatio>
@@ -378,7 +378,7 @@ export default function TripDetail() {
                     <CarouselItem key={index}>
                       <AspectRatio ratio={16 / 9}>
                         <img
-                          src={`http://localhost:8000${src}`}
+                          src={`https://ishrimpapi.iqubekct.ac.in${src}`}
                           className='rounded-md object-cover'
                         />
                       </AspectRatio>
@@ -407,7 +407,7 @@ export default function TripDetail() {
                     <CarouselItem key={index}>
                       <AspectRatio ratio={16 / 9}>
                         <img
-                          src={`http://localhost:8000${src}`}
+                          src={`https://ishrimpapi.iqubekct.ac.in${src}`}
                           className='rounded-md object-cover'
                         />
                       </AspectRatio>
