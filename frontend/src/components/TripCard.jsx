@@ -7,14 +7,14 @@ import {
 } from '@/components/ui/card';
 import { IoTimerOutline } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
-import MetturDam from './../assets/metturDam.jpg';
+// import MetturDam from './../assets/metturDam.jpg';
 export default function TripCard({ data }) {
   const { id, name, startDate, banner, duration } = data;
   return (
     <Link to={`/trips/${id}`} className='w-[300px]'>
       <Card className='w-[320px]'>
         <img
-          src={MetturDam}
+          src={`https://ishrimpapi.iqubekct.ac.in${banner}`}
           alt='trip'
           className='w-full h-48 object-cover rounded-t-md aspect-[3/4]'
         />
