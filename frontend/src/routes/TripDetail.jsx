@@ -286,7 +286,7 @@ export default function TripDetail() {
             <Carousel
               plugins={[
                 Autoplay({
-                  delay: 1000,
+                  delay: 2000,
                 }),
               ]}>
               <CarouselContent>
@@ -313,7 +313,7 @@ export default function TripDetail() {
             <Carousel
               plugins={[
                 Autoplay({
-                  delay: 1000,
+                  delay: 3000,
                 }),
               ]}>
               <CarouselContent>
@@ -342,7 +342,7 @@ export default function TripDetail() {
             <Carousel
               plugins={[
                 Autoplay({
-                  delay: 1000,
+                  delay: 4000,
                 }),
               ]}>
               <CarouselContent>
@@ -369,7 +369,7 @@ export default function TripDetail() {
             <Carousel
               plugins={[
                 Autoplay({
-                  delay: 1000,
+                  delay: 2000,
                 }),
               ]}>
               <CarouselContent>
@@ -398,7 +398,7 @@ export default function TripDetail() {
             <Carousel
               plugins={[
                 Autoplay({
-                  delay: 1000,
+                  delay: 3000,
                 }),
               ]}>
               <CarouselContent>

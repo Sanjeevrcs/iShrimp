@@ -201,6 +201,15 @@ export default function Dashboard() {
           />
         </div>
       </div>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+        <div className='flex-grow'>
+          <video
+            src='https://ishrimpapi.iqubekct.ac.in/media/video1.mp4'
+            className='w-full h-full rounded-lg shadow-md'
+            autoPlay
+          />
+        </div>
+      </div>
     </div>
   );
 }
