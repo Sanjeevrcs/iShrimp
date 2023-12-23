@@ -10,11 +10,19 @@ import {
 } from '@/components/ui/hover-card';
 import { TripRadarChart } from '@/components/TripRadarChart';
 import { tripData1 } from '@/data/DashboardChartData';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableRow } from '@/components/ui/table';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import TripBarChart from '@/components/TripBarChart';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from '@/components/ui/carousel';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
+import Autoplay from 'embla-carousel-autoplay';
+import React from 'react';
 export default function TripDetail() {
   const { id } = useParams();
   const [trip, setTrip] = useState(null);
@@ -36,7 +44,9 @@ export default function TripDetail() {
     { name: 'Cracks', sales: Math.floor(Math.random() * 91 + 10) },
     { name: 'Sedimentation', sales: Math.floor(Math.random() * 91 + 10) },
   ];
-
+  const plugin = React.useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  );
   return (
     <div className='flex gap-10 flex-col'>
       {trip && (
@@ -266,6 +276,147 @@ export default function TripDetail() {
         <div className='h-[500px] w-1/2 bg-card p-4 shadow-md rounded-lg flex items-end'>
           <TripBarChart data={tripBarChartData} />
         </div>
+      </div>
+      <div className='flex gap-10'>
+        <Card className='w-[calc(50%-1rem)]'>
+          <CardHeader>
+            <CardTitle>Corrosion</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <Carousel
+              plugins={[
+                Autoplay({
+                  delay: 1000,
+                }),
+              ]}>
+              <CarouselContent>
+                {trip &&
+                  trip.corrosion.map((src, index) => (
+                    <CarouselItem key={index}>
+                      <AspectRatio ratio={16 / 9}>
+                        <img
+                          src={`http://localhost:8000${src}`}
+                          className='rounded-md object-cover'
+                        />
+                      </AspectRatio>
+                    </CarouselItem>
+                  ))}
+              </CarouselContent>
+            </Carousel>
+          </CardContent>
+        </Card>
+        <Card className='w-[calc(50%-1rem)]'>
+          <CardHeader>
+            <CardTitle>Crack</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <Carousel
+              plugins={[
+                Autoplay({
+                  delay: 1000,
+                }),
+              ]}>
+              <CarouselContent>
+                {trip &&
+                  trip.crack.map((src, index) => (
+                    <CarouselItem key={index}>
+                      <AspectRatio ratio={16 / 9}>
+                        <img
+                          src={`http://localhost:8000${src}`}
+                          className='rounded-md object-cover'
+                        />
+                      </AspectRatio>
+                    </CarouselItem>
+                  ))}
+              </CarouselContent>
+            </Carousel>
+          </CardContent>
+        </Card>
+      </div>
+      <div className='flex gap-10'>
+        <Card className='w-[calc(50%-1rem)]'>
+          <CardHeader>
+            <CardTitle>Fish</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <Carousel
+              plugins={[
+                Autoplay({
+                  delay: 1000,
+                }),
+              ]}>
+              <CarouselContent>
+                {trip &&
+                  trip.fish.map((src, index) => (
+                    <CarouselItem key={index}>
+                      <AspectRatio ratio={16 / 9}>
+                        <img
+                          src={`http://localhost:8000${src}`}
+                          className='rounded-md object-cover'
+                        />
+                      </AspectRatio>
+                    </CarouselItem>
+                  ))}
+              </CarouselContent>
+            </Carousel>
+          </CardContent>
+        </Card>
+        <Card className='w-[calc(50%-1rem)]'>
+          <CardHeader>
+            <CardTitle>Pipe</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <Carousel
+              plugins={[
+                Autoplay({
+                  delay: 1000,
+                }),
+              ]}>
+              <CarouselContent>
+                {trip &&
+                  trip.pipe.map((src, index) => (
+                    <CarouselItem key={index}>
+                      <AspectRatio ratio={16 / 9}>
+                        <img
+                          src={`http://localhost:8000${src}`}
+                          className='rounded-md object-cover'
+                        />
+                      </AspectRatio>
+                    </CarouselItem>
+                  ))}
+              </CarouselContent>
+            </Carousel>
+          </CardContent>
+        </Card>
+      </div>
+      <div className='flex gap-10 items-center justify-center'>
+        <Card className='w-[calc(50%-1rem)]'>
+          <CardHeader>
+            <CardTitle>Plants</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <Carousel
+              plugins={[
+                Autoplay({
+                  delay: 1000,
+                }),
+              ]}>
+              <CarouselContent>
+                {trip &&
+                  trip.plants.map((src, index) => (
+                    <CarouselItem key={index}>
+                      <AspectRatio ratio={16 / 9}>
+                        <img
+                          src={`http://localhost:8000${src}`}
+                          className='rounded-md object-cover'
+                        />
+                      </AspectRatio>
+                    </CarouselItem>
+                  ))}
+              </CarouselContent>
+            </Carousel>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );
